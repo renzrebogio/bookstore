@@ -11,10 +11,14 @@
 }
 
 nav {
-  background: transparent;
+  background: linear-gradient(
+    to right,
+    var(--bright-yellow),
+    var(--primary-red)
+  );
   color: var(--white);
-  height: 90px;
-  padding: 0 5%;
+  height: 70px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,17 +46,21 @@ nav.scrolled {
   text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 15px;
 }
 
 .logo h2 {
-  font-family: "OPTIEngraversOldEnglish", serif;
-  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 800; /* Extra bold for that premium look */
+  letter-spacing: -0.5px;
   color: var(--white);
   text-shadow: var(--text-outline);
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0;
+  margin: 0 40px 0 0; /* Added 40px margin on the right */
+  white-space: nowrap;
 }
 
 .material-icons-outlined {
@@ -70,25 +78,40 @@ nav.scrolled {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
   margin: 0;
   padding: 0;
+  white-space: nowrap; /* Forces links to stay on one line */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-family: "Helvetica", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   transition: all 0.3s ease;
   text-shadow: var(--text-outline);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px; /* Slightly smaller to fit better */
+}
+
+.nav-links a .material-icons-outlined {
+  display: inline-block;
+  font-size: 22px;
+  transition: transform 0.3s ease;
 }
 
 .nav-links a:hover {
   color: var(--white);
-  display: inline-block;
   transform: translateY(-2px);
+}
+
+.nav-links a:hover .material-icons-outlined {
+  transform: scale(1.1);
+  color: var(--gold);
 }
 
 .display-on-mobile {
